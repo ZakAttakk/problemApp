@@ -73,9 +73,7 @@ class App extends Component<any, any> {
 
           />
           <IonRouterOutlet id="main">
-            <IonContent id="allContent" className="allContent">
-              <Logo />
-              <IonGrid>
+
                 <Route path="/search" exact>
                   <Search
                     appState={this.state}
@@ -97,8 +95,6 @@ class App extends Component<any, any> {
                 </Route>
 
 
-              </IonGrid>
-            </IonContent>
           </IonRouterOutlet>
         </IonReactRouter>
       </IonApp>

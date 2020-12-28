@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { IonImg, IonCol, IonRow, IonButton, IonMenuToggle, IonList, IonListHeader, IonLabel, IonItem, IonText } from "@ionic/react";
+import { IonImg, IonCol, IonRow, IonButton, IonMenuToggle, IonGrid, IonContent } from "@ionic/react";
 import homeImage from "../theme/neighborhood.jpg";
+import Logo from "../components/Logo";
 
 class Home extends Component<any, any> {
   constructor(props: any) {
@@ -33,6 +34,9 @@ class Home extends Component<any, any> {
   render() {
     const { notifications } = this.props.appState;
     return (
+      <IonContent>
+      <Logo />
+      <IonGrid>
       <IonRow className="firstFont">
         <IonCol>
           <IonImg src={homeImage} className="frontImg" />
@@ -65,6 +69,8 @@ class Home extends Component<any, any> {
           <br /><br />
         </IonCol>
       </IonRow>
+      </IonGrid>
+      </IonContent>
     );
   }
 }
