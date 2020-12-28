@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { IonImg, IonCol, IonRow, IonButton, IonMenuToggle, IonGrid, IonContent } from "@ionic/react";
+import {
+  IonImg,
+  IonCol,
+  IonRow,
+  IonButton,
+  IonMenuToggle,
+  IonGrid,
+  IonContent,
+} from "@ionic/react";
 import homeImage from "../theme/neighborhood.jpg";
 import Logo from "../components/Logo";
 
@@ -14,42 +22,42 @@ class Home extends Component<any, any> {
     // const sideMenuRef = React.createRef();
     // const sideMenu = sideMenuRef.current;
     // sideMenu.open();
-    
     // const menu = document.querySelector("#menuButton");
     // console.log(menu)
     // menu.click()
-
-  }
+  };
   componentDidUpdate = () => {
-  //   // const sideMenuRef = React.createRef();
-  //   // const sideMenu = sideMenuRef.current;
-  //   // sideMenu.open();
-    
-  //   const menu = document.querySelector("menuButton");
-  //   console.log(menu)
-  //   // menu.click();
-
-  }
+    //   // const sideMenuRef = React.createRef();
+    //   // const sideMenu = sideMenuRef.current;
+    //   // sideMenu.open();
+    //   const menu = document.querySelector("menuButton");
+    //   console.log(menu)
+    //   // menu.click();
+  };
 
   render() {
     const { notifications } = this.props.appState;
     return (
       <IonContent>
-      <Logo />
-      <IonGrid>
-      <IonRow className="firstFont">
-        <IonCol>
-          <IonImg src={homeImage} className="frontImg" />
-          <p style={{paddingLeft: "5px", paddingRight: "6px"}}>
-            Cool Neighbors is a friendship app, not a dating app.&ensp;It's a
-            place to safely and easily meet new people in your neighborhood and
-            your city.&ensp;And it's totally free.
-          </p>{" "}
-          <div className="ion-text-center">
-          <IonMenuToggle><IonButton className="getStarted">Get Started</IonButton></IonMenuToggle>
-          </div><br /><br /><br />
-          
-          {/* <IonList>
+        <Logo />
+        <IonGrid>
+          <IonRow className="firstFont">
+            <IonCol>
+              <IonImg src={homeImage} className="frontImg" />
+              <p style={{ paddingLeft: "5px", paddingRight: "6px" }}>
+                Cool Neighbors is a friendship app, not a dating app.&ensp;It's
+                a place to safely and easily meet new people in your
+                neighborhood and your city.&ensp;And it's totally free.
+              </p>{" "}
+              <div className="ion-text-center">
+                <IonMenuToggle>
+                  <IonButton className="getStarted">Get Started</IonButton>
+                </IonMenuToggle>
+              </div>
+              <br />
+              <br />
+              <br />
+              {/* <IonList>
             <IonListHeader>
               <IonLabel> Notifications</IonLabel>
             </IonListHeader>
@@ -65,11 +73,11 @@ class Home extends Component<any, any> {
             )}
           </IonList>
           <IonButton expand="full" >Register for Push</IonButton> */}
-          
-          <br /><br />
-        </IonCol>
-      </IonRow>
-      </IonGrid>
+              <br />
+              <br />
+            </IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     );
   }

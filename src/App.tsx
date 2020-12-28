@@ -1,18 +1,11 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import {
-  IonApp,
-  IonRouterOutlet,
-  IonContent,
-  IonGrid,
-  isPlatform,
-} from "@ionic/react";
+import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 import Profile2 from "./pages/Profile2";
 import Search from "./pages/Search";
 import Home from "./pages/Home";
-
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -34,9 +27,6 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import "./theme/theme.css";
 import Menu from "./components/Menu";
-import Logo from "./components/Logo";
-
-
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -58,43 +48,26 @@ class App extends Component<any, any> {
       signupPending: false,
       notificationToken: "",
     };
-
-
-
   }
-
 
   render() {
     // console.log(this.allContent)
     return (
       <IonApp>
         <IonReactRouter>
-          <Menu
-
-          />
+          <Menu />
           <IonRouterOutlet id="main">
+            <Route path="/search" exact>
+              <Search appState={this.state} />
+            </Route>
 
-                <Route path="/search" exact>
-                  <Search
-                    appState={this.state}
-                  />
-                </Route>
+            <Route path="/profile" exact>
+              <Profile2 appState={this.state}></Profile2>
+            </Route>
 
-                
-                <Route path="/profile" exact>
-
-                  <Profile2
-                    appState={this.state}
-
-                  ></Profile2>
-
-                </Route>
-
-                <Route path="/" exact>
-                  <Home appState={this.state} />
-                </Route>
-
-
+            <Route path="/" exact>
+              <Home appState={this.state} />
+            </Route>
           </IonRouterOutlet>
         </IonReactRouter>
       </IonApp>
