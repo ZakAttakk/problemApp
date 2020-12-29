@@ -123,8 +123,6 @@ class Search extends Component<any, any> {
 
   render = () => {
     return (
-      <IonContent>
-        <Logo />
         <IonGrid>
           <IonRow className="firstFont">
             <IonCol>
@@ -212,7 +210,6 @@ class Search extends Component<any, any> {
             </IonCol>
           </IonRow>
         </IonGrid>
-      </IonContent>
     );
     // }
   };

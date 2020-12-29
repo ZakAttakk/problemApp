@@ -38,8 +38,6 @@ class Home extends Component<any, any> {
   render() {
     const { notifications } = this.props.appState;
     return (
-      <IonContent>
-        <Logo />
         <IonGrid>
           <IonRow className="firstFont">
             <IonCol>
@@ -78,7 +76,6 @@ class Home extends Component<any, any> {
             </IonCol>
           </IonRow>
         </IonGrid>
-      </IonContent>
     );
   }
 }

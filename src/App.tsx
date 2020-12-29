@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
+import { IonApp, IonContent, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 import Profile2 from "./pages/Profile2";
@@ -27,6 +27,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import "./theme/theme.css";
 import Menu from "./components/Menu";
+import Logo from "./components/Logo";
 
 class App extends Component<any, any> {
   constructor(props: any) {
@@ -34,40 +35,32 @@ class App extends Component<any, any> {
 
     this.state = {
       loggedIn: null,
-      menuDisabled: false,
-      needToShowEmailReminder: false,
       user: {},
       userData: {},
-      connectOnOff: null,
-      connectMailboxOneOnOff: null,
-      connectMailboxTwoOnOff: null,
-      unreadMessages: false,
-      offlineCity: "New York City / NY Metropolitan Area",
-      searchPage: 0,
-      mailbox: [],
-      signupPending: false,
-      notificationToken: "",
     };
   }
 
+
   render() {
-    // console.log(this.allContent)
     return (
       <IonApp>
         <IonReactRouter>
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/search" exact>
-              <Search appState={this.state} />
-            </Route>
+            <IonContent>
+              <Logo />
+              <Route path="/search" exact>
+                <Search appState={this.state} />
+              </Route>
 
-            <Route path="/profile" exact>
-              <Profile2 appState={this.state}></Profile2>
-            </Route>
+              <Route path="/profile" exact>
+                <Profile2 appState={this.state}></Profile2>
+              </Route>
 
-            <Route path="/" exact>
-              <Home appState={this.state} />
-            </Route>
+              <Route path="/" exact>
+                <Home appState={this.state} />
+              </Route>
+            </IonContent>
           </IonRouterOutlet>
         </IonReactRouter>
       </IonApp>

@@ -9,8 +9,6 @@ class Thing extends Component<any, any> {
 
   render = () => {
     return (
-      <IonContent>
-        <Logo />
         <IonGrid>
           <IonRow className="firstFont">
             <IonCol>
@@ -64,7 +62,7 @@ class Thing extends Component<any, any> {
             </IonCol>
           </IonRow>
         </IonGrid>
-      </IonContent>
+
     );
     // }
   };
