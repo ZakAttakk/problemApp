@@ -21,8 +21,15 @@ class Menu extends Component<any, any> {
   
 
   openMenu = () => {
+    // console.log(e)
     const sideMenu = this.sideMenuRef.current;
     sideMenu.open();
+    // console.log(sideMenu)
+  }
+
+  componentDidMount = () => {
+    // const sideMenu = this.sideMenuRef.current;
+    // console.log(sideMenu);
   }
 
 
@@ -78,6 +85,9 @@ class Menu extends Component<any, any> {
           ref={this.sideMenuRef}
           contentId="main"
           max-edge-start="0"
+          onIonDidClose={this.props.ionMenuScrollBugFix}
+          onIonDidOpen={this.props.ionMenuScrollBug}
+
         >
           <IonContent className="ion-text-center sideMenuContent">
             <br />

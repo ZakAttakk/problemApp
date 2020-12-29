@@ -25,7 +25,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import "./theme/theme.css";
+// import "./theme/theme.css";
 import Menu from "./components/Menu";
 import Logo from "./components/Logo";
 
@@ -37,16 +37,32 @@ class App extends Component<any, any> {
       loggedIn: null,
       user: {},
       userData: {},
+      fixBug: "0px"
     };
   }
 
+  // fixBug: any = true;
+
+  ionMenuScrollBug = () => {
+    console.log("open")
+    this.setState({
+      fixBug: "1px"
+    })
+  }
+
+  ionMenuScrollBugFix = () => {
+    console.log("close")
+    this.setState({
+      fixBug: "0px"
+    })
+  }
 
   render() {
     return (
       <IonApp>
         <IonReactRouter>
-          <Menu />
-          <IonRouterOutlet id="main">
+          <Menu ionMenuScrollBug={this.ionMenuScrollBug} ionMenuScrollBugFix={this.ionMenuScrollBugFix} />
+          <IonRouterOutlet style={{top: this.state.fixBug}} id="main">
             <IonContent>
               <Logo />
               <Route path="/search" exact>
